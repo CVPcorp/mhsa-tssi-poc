@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+
+  oracledb:
+    container_name: oracledb
+    image: 'gvenzl/oracle-free:slim-faststart'
+    ports:
+      - 1521:1521
+    volumes:
+      - ./init-scripts:/container-entrypoint-initdb.d
+    environment:
+      ORACLE_PASSWORD: oracle123
